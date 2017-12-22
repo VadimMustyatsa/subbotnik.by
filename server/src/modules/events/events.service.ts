@@ -8,10 +8,11 @@ export class EventsService {
   constructor(
       @Inject('EventsRepositoryToken') private readonly eventsRepository: Repository<Events>) {}
 
-  find(id:number): Promise<Events[]|Events> {
-    if (id) {
-      return this.eventsRepository.findOneById(id);
-    }
+  findById(id:number): Promise<Events> {
+    return this.eventsRepository.findOneById(id);
+  }
+
+  findAll(): Promise<Events[]> {
     return this.eventsRepository.find();
   }
 
@@ -25,11 +26,11 @@ export class EventsService {
     return this.eventsRepository.save(evt);
   }
 
-  updateOne(data: any, id: number) {
+  update(id: number, data: any ) {
     return this.eventsRepository.updateById(id, data);
   }
 
-  deletesmth(id:number) {
+  delete(id:number) {
     return this.eventsRepository.removeById(id);
   }
 }

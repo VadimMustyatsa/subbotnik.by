@@ -1,4 +1,4 @@
-import { IsString, IsInt } from 'class-validator';
+import { IsString, IsInt, IsEmail } from 'class-validator';
 
 export class CreateEventDto {
 
@@ -31,6 +31,7 @@ export class CreateEventDto {
   @IsInt()
   readonly telNumberPrime: number;
   @IsString()
+  @IsEmail()
   readonly usersEmail: string;
   @IsString()
   readonly sitePrime: string;

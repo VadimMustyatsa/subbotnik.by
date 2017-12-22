@@ -1,8 +1,6 @@
 import { Controller, Get, Post, Put, Delete, Body, Query, Param } from '@nestjs/common';
 import { CreateEventDto } from './dto/create-event.dto';
-import { CreateEventUpdateDto} from './dto/create-eventupdate.dto'
 import { EventsService } from './events.service';
-import { Event } from './interfaces/event.interface';
 import { Events } from './events.entity';
 
 @Controller('events')
@@ -26,7 +24,7 @@ export class EventsController {
     }
 
     @Put(':id')
-    async update(@Param('id') id: number, @Body() updateEvent: CreateEventUpdateDto) {
+    async update(@Param('id') id: number, @Body() updateEvent: CreateEventDto) {
         return await this.eventsService.update(id, updateEvent);
     }
 

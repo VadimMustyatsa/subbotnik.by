@@ -10,10 +10,10 @@
     "target": "es6",
     "sourceMap": true,
     "allowJs": true,
-    "outDir": "./server/dist"
+    "outDir": "./dist"
   },
   "include": [
-    "./server/src/**/*"
+    "./src/**/*"
   ],
   "exclude": [
     "node_modules",

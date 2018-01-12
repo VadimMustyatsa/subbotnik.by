@@ -1,5 +1,6 @@
 import { Component, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
+import { validate } from 'class-validator';
 import { Events } from './events.entity';
 
 @Component()
@@ -22,12 +23,28 @@ export class EventsService {
     for (let key in event ) {
       evt[key] = event[key];
     }
-
-    return this.eventsRepository.save(evt);
+    validate(evt).then( errors => {
+      if ( errors.length > 0 ) {
+        throw new Error('terrible');
+      } else {
+        return this.eventsRepository.save(evt);
+      }
+    })
   }
 
-  update(id: number, data: any ) {
-    return this.eventsRepository.updateById(id, data);
+  update(id: number, updateEvent: any ) {
+    const data = new Events();
+
+    for (let key in updateEvent ) {
+      data[key] = updateEvent[key];
+    }
+    validate(data, { skipMissingProperties: true }).then( errors => {
+      if ( errors.length > 0 ) {
+        throw new Error('terrible');
+      } else {
+        return this.eventsRepository.updateById(id, data);
+      }
+    })
   }
 
   delete(id:number) {

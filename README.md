@@ -2,6 +2,6 @@
 
 Подробнее об идее и атрибутике проекта можно прочитать в [соответствующей статье базы знаний](https://github.com/VadimMustyatsa/subbotnik.by/wiki/идея-и-атрибутика-проекта).
 
-Ссылки на артефакты фазы Discovery можно найти [здесь](https://github.com/VadimMustyatsa/subbotnik.by/wiki/Артефакты-фазы-Discovery).
+Ссылки на артефакты фазы Discovery можно найти [здесь](https://github.com/VadimMustyatsa/subbotnik.by/wiki/Артефакты-фазы-Discovery). А описания первых целевых функций продукта [здесь](https://github.com/VadimMustyatsa/subbotnik.by/tree/master/features) (смотрите папку **01_создание_страницы_акции**).
 
 Если вам интересно принять участие в проекте, пишите на vadim@mustyatsa.pro.
